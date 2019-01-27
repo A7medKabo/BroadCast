@@ -155,4 +155,23 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__�
     
 });
 
+client.on('message', message => {   ///Toxic Codes 
+var prefix = "*";
+
+    if (message.content === prefix + "date") {   ///Toxic Codes
+        if (!message.channel.guild) return message.reply('** This command only for servers **');  
+        var currentTime = new Date(),
+            Year = currentTime.getFullYear(),
+            Month = currentTime.getMonth() + 1,
+            Day = currentTime.getDate();
+
+            var Date15= new Discord.RichEmbed()
+            .setTitle("**!~[ التاريخ ]~! **")
+            .setColor('RANDOM')
+            .setTimestamp()
+            .setDescription( ""+ Day + "-" + Month + "-" + Year + "")
+             message.channel.sendEmbed(Date15);
+    }
+});   ///Toxic Codes
+
 client.login(process.env.TOKEN);
