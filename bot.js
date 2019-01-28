@@ -204,13 +204,13 @@ var prefix = "*";
     }
 });   ///Toxic Codes
 
-client.on('guildMemberAdd', member=> {
+client.on('guildMemberAdd', Member=> {
     member.setNickname(`Shadow|| ${member.user.username}`)
 });
 
-client.on('guildMemberAdd', member=> {
+client.on('guildMemberAdd', Member=> {
     var role = member.guild.roles.find("name","Member");
-    member.addRole(role);
+    member.addRole(Member);
 });
 
 client.on('message', message => {/////toxic codes and zezo
